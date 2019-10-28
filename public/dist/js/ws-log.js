@@ -7,7 +7,7 @@ ws.onmessage = function (msg) {
 
 var wsConnectSetIntervalId = setInterval(() => {
     if (_isWSOpenAndReady()) {
-        ws.send('flashscreen')
+        ws.send('default')
         clearInterval(wsConnectSetIntervalId);
         console.log('+')
     }
@@ -24,7 +24,7 @@ function createLIFromWSMessage(msg) {
     var li = document.createElement('li')
     li.style.listStyle = "none"
     li.style.fontSize = 'larger'
-    li.style.background = "#c7c6c0"
+    li.style.background = "#e6eef3"
     li.style.marginTop = '2px'
     li.style.paddingTop = '4px'
     li.style.paddingBottom = '4px'

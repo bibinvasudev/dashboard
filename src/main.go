@@ -4,10 +4,10 @@ package main
 import (
     "fmt"
     "net/http"
-    //"time"
+    "time"
     "github.com/gorilla/websocket"
     "log"
-    //"bufio"
+    "bufio"
     "os"
     "encoding/json"
 
@@ -39,7 +39,7 @@ func main() {
             log.Fatal(err)
     }
     defer file.Close()
-/*
+
     http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
         conn, _ := upgrader.Upgrade(w, r, nil) // error ignored for sake of simplicity
 
@@ -73,14 +73,14 @@ func main() {
 
         }
     })
-*/
+
 
     http.HandleFunc("/param", func(w http.ResponseWriter, r *http.Request) {
         conn1, _ := upgrader.Upgrade(w, r, nil) // error ignored for sake of simplicity
 
 
 
-        for {
+
 
              machinedata1 := machineData{
                            MemoryStats:    "50",
@@ -104,14 +104,14 @@ func main() {
            if err1 != nil {
                 return
             }
-            for{
+
      
            msg1 = []byte(jsonData)
            conn1.WriteMessage(msgType1, msg1)
          
 
-        }
-}
+
     })
+
     http.ListenAndServe(":8080", nil)
 }
