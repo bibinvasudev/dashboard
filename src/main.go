@@ -9,6 +9,8 @@ import (
     "log"
     "bufio"
     "os"
+
+
 )
 
 var upgrader = websocket.Upgrader{
@@ -56,6 +58,50 @@ func main() {
             if err := scanner.Err(); err != nil {
                 log.Fatal(err)
             }
+
+        }
+    })
+
+    http.HandleFunc("/param", func(w http.ResponseWriter, r *http.Request) {
+        conn1, _ := upgrader.Upgrade(w, r, nil) // error ignored for sake of simplicity
+
+
+
+        for {
+            // Read message from browser
+            //msgType, msg, err := conn.ReadMessage()
+            //fmt.Printf(string (msg))
+            //if err != nil {
+            //    return
+            //}
+
+            // Print the message to the console
+            //fmt.Printf("%s sent: %s\n", conn.RemoteAddr(), string(msg))
+            //msg = []byte("Here is a string....")
+
+
+            //scanner := bufio.NewScanner(file)
+            //for scanner.Scan() {
+            //    fmt.Println(scanner.Text())
+            //    time.Sleep(2 * time.Second)
+            //    msg = []byte(scanner.Text())
+            //    conn.WriteMessage(msgType, msg)
+
+            //}
+
+            //if err := scanner.Err(); err != nil {
+            //    log.Fatal(err)
+            //}
+            
+           msgType1, msg1, err1 := conn1.ReadMessage()
+
+           if err1 != nil {
+                return
+            }
+ 
+          msg1 = []byte(string(55))
+           conn1.WriteMessage(msgType1, msg1)
+         
 
         }
     })
