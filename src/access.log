@@ -1,0 +1,56 @@
+12:45:10 ERROR Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 Current date: 2019-10-23T12:45:10+0530
+12:45:10 lr_download: Target: file:///etc/dnf/dnf.conf (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/dnf/dnf.conf
+12:45:10 prepare_next_transfer: URL: file:///etc/dnf/dnf.conf
+12:45:10 ERROR add_librepo_xattr: Cannot set xattr user.Librepo.DownloadInProgress (fd: 7): Operation not supported
+12:45:10 lr_download: Downloading started
+12:45:10 check_transfer_statuses: Transfer finished: file:///etc/dnf/dnf.conf (Effective url: file:///etc/dnf/dnf.conf)
+12:45:10 lr_download: Target: file:///etc/yum.repos.d/fedora-cisco-openh264.repo (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/yum.repos.d/fedora-cisco-openh264.repo
+12:45:10 prepare_next_transfer: URL: file:///etc/yum.repos.d/fedora-cisco-openh264.repo12:45:10 Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 ERROR Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 Current date: 2019-10-23T12:45:10+0530
+12:45:10 lr_download: Target: file:///etc/dnf/dnf.conf (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/dnf/dnf.conf
+12:45:10 prepare_next_transfer: URL: file:///etc/dnf/dnf.conf
+12:45:10 ERROR add_librepo_xattr: Cannot set xattr user.Librepo.DownloadInProgress (fd: 7): Operation not supported
+12:45:10 lr_download: Downloading started
+12:45:10 check_transfer_statuses: Transfer finished: file:///etc/dnf/dnf.conf (Effective url: file:///etc/dnf/dnf.conf)
+12:45:10 lr_download: Target: file:///etc/yum.repos.d/fedora-cisco-openh264.repo (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/yum.repos.d/fedora-cisco-openh264.repo
+12:45:10 prepare_next_transfer: URL: file:///etc/yum.repos.d/fedora-cisco-openh264.repo12:45:10 Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+
+12:45:10 ERROR Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 Current date: 2019-10-23T12:45:10+0530
+12:45:10 lr_download: Target: file:///etc/dnf/dnf.conf (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/dnf/dnf.conf
+12:45:10 prepare_next_transfer: URL: file:///etc/dnf/dnf.conf
+12:45:10 ERROR add_librepo_xattr: Cannot set xattr user.Librepo.DownloadInProgress (fd: 7): Operation not supported
+12:45:10 lr_download: Downloading started
+12:45:10 check_transfer_statuses: Transfer finished: file:///etc/dnf/dnf.conf (Effective url: file:///etc/dnf/dnf.conf)
+12:45:10 lr_download: Target: file:///etc/yum.repos.d/fedora-cisco-openh264.repo (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/yum.repos.d/fedora-cisco-openh264.repo
+12:45:10 prepare_next_transfer: URL: file:///etc/yum.repos.d/fedora-cisco-openh264.repo12:45:10 Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 ERROR Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 Current date: 2019-10-23T12:45:10+0530
+12:45:10 lr_download: Target: file:///etc/dnf/dnf.conf (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/dnf/dnf.conf
+12:45:10 prepare_next_transfer: URL: file:///etc/dnf/dnf.conf
+12:45:10 ERROR add_librepo_xattr: Cannot set xattr user.Librepo.DownloadInProgress (fd: 7): Operation not supported
+12:45:10 lr_download: Downloading started
+12:45:10 check_transfer_statuses: Transfer finished: file:///etc/dnf/dnf.conf (Effective url: file:///etc/dnf/dnf.conf)
+12:45:10 lr_download: Target: file:///etc/yum.repos.d/fedora-cisco-openh264.repo (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/yum.repos.d/fedora-cisco-openh264.repo
+12:45:10 prepare_next_transfer: URL: file:///etc/yum.repos.d/fedora-cisco-openh264.repo12:45:10 Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 ERROR Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
+12:45:10 Current date: 2019-10-23T12:45:10+0530
+12:45:10 lr_download: Target: file:///etc/dnf/dnf.conf (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/dnf/dnf.conf
+12:45:10 prepare_next_transfer: URL: file:///etc/dnf/dnf.conf
+12:45:10 ERROR add_librepo_xattr: Cannot set xattr user.Librepo.DownloadInProgress (fd: 7): Operation not supported
+12:45:10 lr_download: Downloading started
+12:45:10 check_transfer_statuses: Transfer finished: file:///etc/dnf/dnf.conf (Effective url: file:///etc/dnf/dnf.conf)
+12:45:10 lr_download: Target: file:///etc/yum.repos.d/fedora-cisco-openh264.repo (-)
+12:45:10 select_next_target: Selecting mirror for: file:///etc/yum.repos.d/fedora-cisco-openh264.repo
+12:45:10 prepare_next_transfer: URL: file:///etc/yum.repos.d/fedora-cisco-openh264.repo12:45:10 Librepo version: 1.7.18 with CURL_GLOBAL_ACK_EINTR support (libcurl/7.50.3 NSS/3.26 zlib/1.2.8 libidn/1.33 libpsl/0.14.0 (+libidn/1.33) libssh2/1.8.0 nghttp2/1.13.0)
