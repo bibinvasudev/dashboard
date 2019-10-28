@@ -7,7 +7,14 @@ var machineData = {
     'MapPlotValue': '12%'
 }
 
-ws_machineData.onmessage = function (msg) {
+setTimeout(() => {
+    ws_machineData.send(0)
+}, 1000);
+
+
+ws_machineData.onmessage = function (msgObj) {
+    var msg = JSON.parse(msgObj.data);
+
     machineData.MemoryStats = msg.MemoryStats
     machineData.DiskUsage = msg.DiskUsage
     machineData.MemoryUsage = msg.MemoryUsage
