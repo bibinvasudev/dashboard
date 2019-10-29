@@ -164,7 +164,8 @@
       <div class="box-footer">
                   <form action="#" method="post">
                     <div class="input-group">
-                      <input type="text" class="form-control query-input" name="message" placeholder="query language to fetch log data ...">
+                    <input type="text" class="form-control query-input" name="message" placeholder="query language to fetch log data ...">
+
                       <span class="input-group-btn">
                             <button type="button" class="btn btn-warning btn-flat" onclick="sendQuery()">SEND</button>
                           </span>
@@ -359,113 +360,104 @@
 <script src="../../bower_components/Flot/jquery.flot.pie.js"></script>
 <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
 <script src="../../bower_components/Flot/jquery.flot.categories.js"></script>
+
+<script src="../../bower_components/Flot/jquery.flot.time.js"></script>
+
 <!-- Page script -->
 <script>
-  $(function () {
-    /*
-     * Flot Interactive Chart
-     * -----------------------
-     */
-    // We use an inline data source in the example, usually data would
-    // be fetched from a server
-    var data = [], totalPoints = 100
+  var data = [];
+var dataset;
+var totalPoints = 100;
+var updateInterval = 1000;
+var now = new Date().getTime();
 
-    function getRandomData() {
 
-      if (data.length > 0)
-        data = data.slice(1)
+function GetData() {
+    data.shift();
 
-      // Do a random walk
-      while (data.length < totalPoints) {
+    while (data.length < totalPoints) {     
+        var y = Math.random() * 100;
+        var temp = [now += updateInterval, +machineData.MapPlotValue];
+      data.push(temp);
 
-        var prev = data.length > 0 ? data[data.length - 1] : 50,
-          y = prev + Math.random() * 10 - 5
+    }
+}
 
-        if (y < 0) {
-          y = 0
-        } else if (y > 100) {
-          y = 100
+var options = {
+    series: {
+        lines: {
+            show: true,
+            lineWidth: 1.2,
+            fill: true
         }
-        //alert(y);
-        data.push(+machineData.MapPlotValue)
-      }
+    },
+    xaxis: {
+        mode: "time",
+        tickSize: [2, "second"],
+        tickFormatter: function (v, axis) {
+            var date = new Date(v);
 
-      // Zip the generated y values with the x values
-      var res = []
-      for (var i = 0; i < data.length; ++i) {
-        res.push([i, data[i]])
-      }
+            if (date.getSeconds() % 20 == 0) {
+                var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+                var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+                var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
 
-      return res
-    }
-
-    var interactive_plot = $.plot('#interactive', [getRandomData()], {
-      grid: {
-        borderColor: '#f3f3f3',
-        borderWidth: 1,
-        tickColor: '#f3f3f3'
-      },
-      series: {
-        shadowSize: 0, // Drawing is faster without shadows
-        color: '#3c8dbc'
-      },
-      lines: {
-        fill: true, //Converts the line chart to area chart
-        color: '#3c8dbc'
-      },
-      yaxis: {
+                return hours + ":" + minutes + ":" + seconds;
+            } else {
+                return "";
+            }
+        },
+        axisLabel: "Time",
+        axisLabelUseCanvas: true,
+        axisLabelFontSizePixels: 12,
+        axisLabelFontFamily: 'Verdana, Arial',
+        axisLabelPadding: 10
+    },
+    yaxis: {
         min: 0,
-        max: 100,
-        show: true
-      },
-      xaxis: {
-        show: true
-      }
-    })
+        max: 100,        
+        tickSize: 5,
+        tickFormatter: function (v, axis) {
+            if (v % 10 == 0) {
+                return v + "%";
+            } else {
+                return "";
+            }
+        },
+        axisLabel: "CPU loading",
+        axisLabelUseCanvas: true,
+        axisLabelFontSizePixels: 12,
+        axisLabelFontFamily: 'Verdana, Arial',
+        axisLabelPadding: 6
+    },
+    legend: {        
+        labelBoxBorderColor: "#0B6DA5"
+    },
+    grid: {                
+        backgroundColor: "#e6eef3",
+        tickColor: "#bfbfbf"
+    }
+};
 
-    var updateInterval = 500 //Fetch data ever x milliseconds
-    var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
+$(document).ready(function () {
+    GetData();
+
+    dataset = [
+        { label: "CPU", data: data, color: "#025c1a" }
+    ];
+
+    $.plot($("#interactive"), dataset, options);
+
     function update() {
+        GetData();
 
-      interactive_plot.setData([getRandomData()])
-
-      // Since the axes don't change, we don't need to call plot.setupGrid()
-      interactive_plot.draw()
-      if (realtime === 'on')
-        setTimeout(update, updateInterval)
+        $.plot($("#interactive"), dataset, options)
+        setTimeout(update, updateInterval);
     }
 
-    //INITIALIZE REALTIME DATA FETCHING
-    if (realtime === 'on') {
-      update()
-    }
-    //REALTIME TOGGLE
-    $('#realtime .btn').click(function () {
-      if ($(this).data('toggle') === 'on') {
-        realtime = 'on'
-      }
-      else {
-        realtime = 'off'
-      }
-      update()
-    })
-    /*
-     * END INTERACTIVE CHART
-     */
+    update();
+});
 
- 
-  })
-
-  /*
-   * Custom Label formatter
-   * ----------------------
-   */
-  function labelFormatter(label, series) {
-    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-      + label
-      + '<br>'
-      + Math.round(series.percent) + '%</div>'
-  }
 </script>
 </body>
 </html>
